@@ -1,0 +1,152 @@
+version: "3.1"
+
+intents:
+  - greet
+  - ask_features
+  - pricing_info
+  - support_request
+  - lead_capture
+  - faq
+  - product_info
+  - document_qa
+  - multilingual_support
+  - voice_support
+  - booking_schedule
+  - goodbye
+  - bot_challenge
+
+entities:
+  - name
+  - email
+  - interest
+  - language
+  - date
+  - time
+
+slots:
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: name
+      - type: from_text
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: email
+      - type: from_text
+  interest:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: interest
+      - type: from_text
+  language:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: language
+      - type: from_text
+  date:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: date
+      - type: from_text
+  time:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: time
+      - type: from_text
+
+responses:
+  utter_greet:
+    - text: "Hello! 👋 I'm your assistant. How can I help you today?"
+
+  utter_features:
+    - text: "Here’s what I can help you with:"
+      buttons:
+        - title: "💰 Pricing"
+          payload: "/pricing_info"
+        - title: "🛠 Support"
+          payload: "/support_request"
+        - title: "📩 Contact Sales"
+          payload: "/lead_capture"
+        - title: "❓ FAQ"
+          payload: "/faq"
+        - title: "🧾 Product Info"
+          payload: "/product_info"
+        - title: "📄 Ask a Document"
+          payload: "/document_qa"
+        - title: "🌐 Language Support"
+          payload: "/multilingual_support"
+        - title: "🎙 Voice Support"
+          payload: "/voice_support"
+        - title: "📅 Schedule a Call"
+          payload: "/booking_schedule"
+
+  utter_pricing_info:
+    - text: "Our pricing is based on features. What product are you interested in?"
+
+  utter_support_request:
+    - text: "Sure, I can help with support. Please describe your issue."
+
+  utter_ask_contact_info:
+    - text: "May I have your name and email to connect you with our sales team?"
+
+  utter_ask_name:
+    - text: "Can I have your name, please?"
+
+  utter_ask_email:
+    - text: "May I know your email address?"
+
+  utter_ask_interest:
+    - text: "What product or service are you interested in?"
+
+  utter_faq_response:
+    - text: "Here are some frequently asked questions. Please ask your question."
+
+  utter_product_info:
+    - text: "Which product do you want information about?"
+
+  utter_document_qa:
+    - text: "Please upload or mention the document you'd like to ask about."
+
+  utter_multilingual_support:
+    - text: "Sure! What language would you prefer to continue in?"
+
+  utter_voice_support:
+    - text: "Voice support is enabled. You can start speaking."
+
+  utter_ask_date:
+    - text: "What date would you like to schedule the call?"
+
+  utter_ask_time:
+    - text: "What time works best for you?"
+
+  utter_booking_confirmed:
+    - text: "Your call has been scheduled for {date} at {time}. You'll receive a confirmation shortly."
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+
+  utter_iamabot:
+    - text: "I am a bot here to assist you. How can I help?"
+
+actions:
+  - action_document_qa
+  - action_switch_language
+  - action_enable_voice
+  - action_schedule_booking
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

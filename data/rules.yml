@@ -1,0 +1,68 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- rule: Respond to pricing info
+  steps:
+    - intent: pricing_info
+    - action: utter_pricing_info
+    - action: utter_ask_interest
+
+- rule: Respond to support requests
+  steps:
+    - intent: support_request
+    - action: utter_support_request
+
+- rule: Capture lead information
+  steps:
+    - intent: lead_capture
+    - action: utter_ask_name
+    - action: utter_ask_email
+    - action: utter_ask_interest
+    - action: utter_ask_contact_info
+
+- rule: Respond to FAQ
+  steps:
+    - intent: faq
+    - action: utter_faq_response
+
+- rule: Provide product information
+  steps:
+    - intent: product_info
+    - action: utter_product_info
+
+- rule: Answer questions from a document
+  steps:
+    - intent: document_qa
+    - action: action_document_qa
+    - action: utter_document_qa
+
+- rule: Handle multilingual support
+  steps:
+    - intent: multilingual_support
+    - action: action_switch_language
+    - action: utter_multilingual_support
+
+- rule: Enable voice support
+  steps:
+    - intent: voice_support
+    - action: action_enable_voice
+    - action: utter_voice_support
+
+- rule: Handle booking/scheduling
+  steps:
+    - intent: booking_schedule
+    - action: utter_ask_date
+    - action: utter_ask_time
+    - action: action_schedule_booking
+    - action: utter_booking_confirmed

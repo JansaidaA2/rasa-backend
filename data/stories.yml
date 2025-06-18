@@ -1,0 +1,83 @@
+version: "3.1"
+
+stories:
+
+- story: greet and show features
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_features
+    - action: utter_features
+
+- story: pricing inquiry
+  steps:
+    - intent: pricing_info
+    - action: utter_pricing_info
+    # Added prompt to ask about interest (product/service)
+    - action: utter_ask_interest
+
+- story: support request
+  steps:
+    - intent: support_request
+    - action: utter_support_request
+
+- story: lead capture inquiry
+  steps:
+    - intent: lead_capture
+    # Added steps to ask for name, email, interest before contact info
+    - action: utter_ask_name
+    - action: utter_ask_email
+    - action: utter_ask_interest
+    - action: utter_ask_contact_info
+
+- story: faq interaction
+  steps:
+    - intent: faq
+    - action: utter_faq_response
+
+- story: product information
+  steps:
+    - intent: product_info
+    - action: utter_product_info
+
+- story: document question answering
+  steps:
+    - intent: document_qa
+    - action: action_document_qa
+    # Added utterance to continue interaction
+    - action: utter_document_qa
+
+- story: multilingual support
+  steps:
+    - intent: multilingual_support
+    - action: action_switch_language
+    # Added utterance confirming language switch
+    - action: utter_multilingual_support
+
+- story: voice input request
+  steps:
+    - intent: voice_support
+    - action: action_enable_voice
+    # Added utterance confirming voice support enabled
+    - action: utter_voice_support
+
+- story: meeting or demo scheduling
+  steps:
+    - intent: booking_schedule
+    # Added utterances to ask date and time
+    - action: utter_ask_date
+    - action: utter_ask_time
+    - action: action_schedule_booking
+    # Added confirmation utterance
+    - action: utter_booking_confirmed
+
+- story: goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+

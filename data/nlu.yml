@@ -1,0 +1,109 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - good evening
+    - what's up
+
+- intent: ask_features
+  examples: |
+    - what can you do
+    - tell me your features
+    - what are your capabilities
+    - how can you help me
+    - what services do you offer
+    - show me the options
+
+- intent: pricing_info
+  examples: |
+    - I want to know pricing
+    - tell me about the plans
+    - what is the cost
+    - pricing details please
+    - what's the price of your product
+    - how much does it cost
+
+- intent: support_request
+  examples: |
+    - I need help
+    - I have an issue
+    - contact support
+    - I need technical support
+    - my product is not working
+    - I need assistance
+
+- intent: lead_capture
+  examples: |
+    - I want to talk to sales
+    - I'm interested in your services
+    - please contact me
+    - I need a quote
+    - reach out to me
+    - I want a demo
+
+- intent: faq
+  examples: |
+    - what is your refund policy
+    - how long is the free trial
+    - is support available 24/7
+    - how do I reset my password
+    - how do I update my profile
+
+- intent: product_info
+  examples: |
+    - tell me about your product
+    - I want product details
+    - what features does your software have
+    - product information please
+    - give me an overview of the product
+
+- intent: document_qa
+  examples: |
+    - I want to ask something about this document
+    - can I get answers from this file
+    - help me understand this document
+    - ask something from uploaded doc
+
+- intent: multilingual_support
+  examples: |
+    - can you talk in Spanish
+    - I prefer Hindi
+    - speak in Telugu
+    - switch language
+    - change language to Tamil
+
+- intent: voice_support
+  examples: |
+    - can I use voice
+    - enable microphone
+    - I want to speak
+    - voice input please
+
+- intent: booking_schedule
+  examples: |
+    - I want to schedule a call
+    - book a demo
+    - can I talk to a human
+    - schedule a meeting
+    - arrange a call
+    - I want to book a consultation
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you
+    - talk later
+    - farewell
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you human?
+    - who are you?
+    - what are you?
