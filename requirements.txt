@@ -1,7 +1,7 @@
 pip>=25.1.1
 setuptools>=70.0.0
-packaging>=24.0
+packaging>=20.0,<21.0
 
 rasa==3.6.10
 rasa-sdk==3.6.2
-# fire
+fire==0.5.0
