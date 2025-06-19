@@ -1,7 +1,13 @@
-pip>=25.1.1
-setuptools>=70.0.0
-packaging>=20.0,<21.0
-
+# Python dependencies for Rasa 3.6.10 and compatibility
 rasa==3.6.10
 rasa-sdk==3.6.2
-fire==0.5.0
+
+# Avoid version conflicts between packaging and setuptools
+setuptools==67.7.2
+packaging==20.9
+
+# Fire needs an older setuptools-compatible setup
+fire==0.4.0
+
+# (Optional) You can pin protobuf if needed by your code
+protobuf==4.23.3
