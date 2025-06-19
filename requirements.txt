@@ -11,3 +11,5 @@ fire==0.4.0
 
 # (Optional) You can pin protobuf if needed by your code
 protobuf==4.23.3
+
+pymysql
